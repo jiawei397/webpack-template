@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.uinnova.com:library/tarsier.git"
+    "url": "git@github.com:jiawei397/webpack-template.git"
   },
   "license": "ISC"
 }
