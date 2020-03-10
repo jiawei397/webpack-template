@@ -1,0 +1,2 @@
+var version = [version];
+Hey [name]!

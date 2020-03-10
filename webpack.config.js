@@ -20,17 +20,33 @@ let defaultConfig = {
   // externals: {
   //   bluebird: "bluebird"
   // },
+  module: {
+    rules: [
+      {
+        test: /\.txt$/,
+        use: [
+          {
+            loader: path.resolve('txt-loader.js'),
+            options: {/* ... */
+              name: 'jw',
+              version: require('./package').version
+            }
+          }
+        ]
+      }
+    ]
+  },
   plugins: plugins
 };
 
 let config = {};
 if (!opts.includes('production')) {//开发环境
   config = {
-    devtool: 'inline-source-map'
+    devtool: 'inline-source-map',
     // devtool:'hidden-source-map'
-    // devServer: {
-    //   port: 8089
-    // },
+    devServer: {
+      port: 8089
+    },
   };
   [].push.apply(plugins, [
     new webpack.NamedModulesPlugin(),
